@@ -8,7 +8,8 @@ export default {
       backgroundImage: {
         'apartments': 'url("https://i.ibb.co/y5G5dRt/apartments-dinein.jpg")',
         'family': 'url("https://i.ibb.co/9nWXnR6/Single-family-homes.jpg")',
-        'rentals': 'url("https://i.ibb.co/R0vDshk/vacation-rentals.jpg")'
+        'rentals': 'url("https://i.ibb.co/R0vDshk/vacation-rentals.jpg")',
+        'animated': 'url("src/assets/Animated Shape.svg")'
       },
       fontFamily:{
         'Josefin':'"Josefin Sans", sans-serif;'
