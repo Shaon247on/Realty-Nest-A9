@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
     return (
-        <div className="bg-animated p-20">
-            <div className="h-[70vh] mx-auto bg-base-200 flex items-center gap-2 mt-[53px] rounded-xl overflow-hidden px-7 justify-between p-5">
-                <div className=" shrink-0 w-1/2 h-[70vh] bg-base-100 px-10">
-                    <form className="card-body">
+        <div className="bg-animated p-0 md:p-20 lg:p-20 pt-[18px]">
+            <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row md:h-[900px] lg:h-[70vh] mx-auto bg-base-200 items-center gap-2 mt-[53px] rounded-none md:rounded-sm lg:rounded-xl overflow-hidden px-7 justify-center lg:justify-between p-0 md:p-5 lg:p-5">
+                <div className=" shrink-0 w-1/2 h-[70vh] bg-base-100 md:px-0 lg:px-10">
+                    <form className="">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -26,11 +26,10 @@ const Login = () => {
                         </div>
                     </form>
                 </div>
-                <div className="w-[2px] h-full bg-[#26262633]">
-
+                <div className="w-[86%] lg:w-[2px] h-[2px] lg:h-full bg-[#26262633] mb-7 lg:mb-0">
                 </div>
-                <div className="h-full">
-                    <img src="https://i.ibb.co/Bww2zfy/undraw-Login-re-4vu2-1.png" alt="" className="w-[600px] h-[350px]" />
+                <div className="lg:h-full">
+                    <img src="https://i.ibb.co/Bww2zfy/undraw-Login-re-4vu2-1.png" alt="" className="w-[600px] h-[300px] md:h-[350px] lg:h-[350px]" />
                 </div>
             </div>
         </div>
