@@ -29,7 +29,7 @@ const Login = () => {
                 <div className="w-[86%] lg:w-[2px] h-[2px] lg:h-full bg-[#26262633] mb-7 lg:mb-0">
                 </div>
                 <div className="lg:h-full">
-                    <img src="https://i.ibb.co/Bww2zfy/undraw-Login-re-4vu2-1.png" alt="" className="w-[600px] h-[300px] md:h-[350px] lg:h-[350px]" />
+                    <img src="https://i.ibb.co/Bww2zfy/undraw-Login-re-4vu2-1.png" alt="" className="w-[600px] h-[200px] md:h-[350px] lg:h-[350px]" />
                 </div>
             </div>
         </div>
