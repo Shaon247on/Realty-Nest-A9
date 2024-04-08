@@ -8,7 +8,7 @@ const Header = () => {
 
     </>
     return (
-        <div className="flex justify-between w-full fixed bg-[#262626] text-white px-20 items-center z-50 shadow-sm opacity-85">
+        <div className="flex justify-between w-full fixed bg-[#262626] text-white px-20 py-3 items-center z-50 shadow-sm opacity-85">
             <div className="">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -18,7 +18,7 @@ const Header = () => {
                         {navLink}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+                <a className="btn btn-ghost text-2xl font-bold">Realty <span className="text-[#AD974F]">Nest</span></a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -26,7 +26,7 @@ const Header = () => {
                 </ul>
             </div>
             <div>
-                <h1>hello</h1>
+                <button className="btn bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#55482b] hover:to-[#a89a6c] text-white px-10">Login</button>
             </div>
         </div>
     );
