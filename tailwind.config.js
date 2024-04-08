@@ -5,9 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",],
   theme: {
     extend: {
-      backgroundImage:{
-        'sea': 'url("https://i.ibb.co/Bww2zfy/undraw-Login-re-4vu2-1.png")'
-      }
+      backgroundImage: {
+        'apartments': 'url("https://i.ibb.co/y5G5dRt/apartments-dinein.jpg")',
+        'family': 'url("https://i.ibb.co/9nWXnR6/Single-family-homes.jpg")',
+        'rentals': 'url("https://i.ibb.co/R0vDshk/vacation-rentals.jpg")'
+      },
+      fontFamily:{
+        'Josefin':'"Josefin Sans", sans-serif;'
+      }      
     },
   },
   plugins: [require("daisyui")],

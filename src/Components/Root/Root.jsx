@@ -3,9 +3,9 @@ import Header from "../Elements/Header";
 import Footer from "../Elements/Footer"
 const Root = () => {
     return (
-        <div className="max-w-6xl mx-auto">
-            <Header></Header>
-            <Outlet></Outlet>
+        <div className="">
+            <Header className="mb-8"></Header>
+            <Outlet className="max-w-6xl mx-auto mt-16"></Outlet>
             <Footer></Footer>
         </div>
     );
