@@ -4,8 +4,8 @@ import { AuthContext } from "../../../AuthProvider/AuthProvider";
 
 const Register = () => {
 
-    const {registerAuth} = useContext(AuthContext)
-
+    const {registerAuth, updateProfile} = useContext(AuthContext)
+    
     const handleRegister= (e)=>{
         e.preventDefault()
         const name = e.target.name.value
@@ -15,6 +15,13 @@ const Register = () => {
         console.log(name, photo, email, password)
         registerAuth(email, password)
         .then(result =>{
+            console.log(result.user)
+        })
+        .catch(error=>{
+            console.error(error);
+        })
+        updateProfile(name, photo)
+        .then(result=>{
             console.log(result.user)
         })
         .catch(error=>{

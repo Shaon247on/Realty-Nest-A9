@@ -1,12 +1,27 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Header = () => {
     const navLink = <>
         <li> <NavLink to='/'>Home</NavLink> </li>
         <li> <NavLink to='/login'>Login</NavLink> </li>
         <li> <NavLink to='/register'>Register</NavLink> </li>
-
     </>
+
+    const { logOut, user } = useContext(AuthContext)
+
+    const handleSignOut = () => {
+        logOut()
+            .then(result => {
+                console.log('user log out', result)
+            })
+            .catch(error => {
+                console.error(error);
+            })
+
+    }
+
     return (
         <div className="flex justify-between w-full fixed bg-[#262626] text-white px-2 lg:px-20 py-3 items-center z-50 shadow-sm opacity-85">
             <div className="flex items-center">
@@ -25,8 +40,19 @@ const Header = () => {
                     {navLink}
                 </ul>
             </div>
-            <div>
-                <button className="btn bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#55482b] hover:to-[#a89a6c] text-white px-10">Login</button>
+            <div className="flex items-center gap-6">
+                <div>
+                    {
+                        user ? <><img title={user.displayName} src={user.photoURL} alt="" className="w-[34px] h-[34px] rounded-full" /></> :
+                            <><samp></samp></>
+                    }
+                </div>
+                <div>
+                    {
+                        user ? <button onClick={handleSignOut} className="btn bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#55482b] hover:to-[#a89a6c] text-white px-10">Sign Out</button> :
+                            <button className="btn bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#55482b] hover:to-[#a89a6c] text-white px-10"> <Link to='/login'>Login</Link> </button>
+                    }
+                </div>
             </div>
         </div>
     );
