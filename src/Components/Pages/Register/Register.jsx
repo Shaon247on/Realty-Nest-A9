@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
+import { updateProfile } from "firebase/auth";
+import auth from "../../../firebase/firebase";
 
 const Register = () => {
 
-    const {registerAuth, updateProfile} = useContext(AuthContext)
+    const {registerAuth, profileUpdate, user, setUser} = useContext(AuthContext)
     
     const handleRegister= (e)=>{
         e.preventDefault()
@@ -20,9 +22,13 @@ const Register = () => {
         .catch(error=>{
             console.error(error);
         })
-        updateProfile(name, photo)
+        updateProfile(auth.currentUser,{
+            displayName:name,
+            photoURL:photo
+        })
         .then(result=>{
             console.log(result.user)
+            setUser(result.user)
         })
         .catch(error=>{
             console.error(error);
