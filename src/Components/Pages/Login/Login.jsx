@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 
 const Login = () => {
+
     return (
         <div className="bg-animated p-0 md:p-20 lg:p-20 pt-[18px]">
-            <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row md:h-[900px] lg:h-[70vh] mx-auto bg-base-200 items-center gap-2 mt-[53px] rounded-none md:rounded-sm lg:rounded-xl overflow-hidden px-7 justify-center lg:justify-between p-0 md:p-5 lg:p-5">
-                <div className=" shrink-0 w-1/2 h-[70vh] bg-base-100 md:px-0 lg:px-10">
-                    <form className="">
+            <div className="text-center mt-[10px] lg:mt-[23px]">
+                <p className="text-3xl md:text-5xl font-bold text-[#AD974F]">Login Now</p>
+            </div>
+            <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row border-2 border-red-200 h-[600px] md:h-[900px] lg:h-[400px] mx-auto bg-base-200 items-center gap-2 mt-[23px] rounded-none md:rounded-xl lg:rounded-xl overflow-hidden px-7 justify-end md:justify-center lg:justify-between p-0 md:p-5 lg:p-5">
+                <div className="shrink-0 w-[80%] md:w-3/4 lg:w-1/2  lg:h-[400px] bg-base-100 md:px-0 lg:px-10">
+                    <form className="lg:p-7">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
