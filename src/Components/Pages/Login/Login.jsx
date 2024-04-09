@@ -1,6 +1,24 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../AuthProvider/AuthProvider";
 
 const Login = () => {
+
+    const {loginAuth} = useContext(AuthContext)
+
+    const handleLogin = e =>{
+        e.preventDefault()
+        const email = e.target.email.value
+        const password = e.target.password.value
+        console.log(email, password)
+        loginAuth(email, password)
+        .then(result=>{
+            console.log(result.user)
+        })
+        .catch(error =>{
+            console.error(error);
+        })
+    }
 
     return (
         <div className="bg-animated p-0 md:p-20 lg:p-20 pt-[18px]">
@@ -9,18 +27,28 @@ const Login = () => {
             </div>
             <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row border-2 border-red-200 h-[600px] md:h-[900px] lg:h-[400px] mx-auto bg-base-200 items-center gap-2 mt-[23px] rounded-none md:rounded-xl lg:rounded-xl overflow-hidden px-7 justify-end md:justify-center lg:justify-between p-0 md:p-5 lg:p-5">
                 <div className="shrink-0 w-[80%] md:w-3/4 lg:w-1/2  lg:h-[400px] bg-base-100 md:px-0 lg:px-10">
-                    <form className="lg:p-7">
+                    <form onSubmit={handleLogin} className="lg:p-7">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" placeholder="email" className="input input-bordered" required />
+                            <input 
+                            name="email"
+                            type="email" 
+                            placeholder="email"
+                             className="input input-bordered" 
+                             required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" placeholder="password" className="input input-bordered" required />
+                            <input 
+                            name="password"
+                            type="password" 
+                            placeholder="password" 
+                            className="input input-bordered" 
+                            required />
                             <label className="label">
                                 <p>New to the website, <Link to='/register' className="text-blue-500 underline">Register Now</Link></p>
                             </label>
