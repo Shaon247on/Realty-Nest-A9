@@ -43,13 +43,28 @@ const Header = () => {
             <div className="flex items-center gap-6">
                 <div>
                     {
-                        user ? <><img title={user.displayName} src={user.photoURL} alt="" className="w-[34px] h-[34px] rounded-full" /></> :
+                        user ? <>
+                            <img title={user.displayName} src={user.photoURL} alt="" className="object-cover w-[44px] h-[44px] rounded-full" />
+
+                            <details className="dropdown">
+                                <img title={user.displayName} src={user.photoURL} alt="" className="object-cover w-[44px] h-[44px] rounded-full" />
+
+                                <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                                    <li><a>Item 1</a></li>
+                                    <li><a>Item 2</a></li>
+                                </ul>
+                            </details>
+
+                        </> :
                             <><samp></samp></>
                     }
                 </div>
                 <div>
                     {
-                        user ? <button onClick={handleSignOut} className="btn bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#55482b] hover:to-[#a89a6c] text-white px-10">Sign Out</button> :
+                        user ? <>
+                            <button onClick={handleSignOut} className="btn w-16 md:w-32 lg:w-36 bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#55482b] hover:to-[#a89a6c] text-white px-10">Sign Out</button>
+
+                        </> :
                             <button className="btn bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#55482b] hover:to-[#a89a6c] text-white px-10"> <Link to='/login'>Login</Link> </button>
                     }
                 </div>

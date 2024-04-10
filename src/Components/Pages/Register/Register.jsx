@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
-import { updateProfile } from "firebase/auth";
 import auth from "../../../firebase/firebase";
 import { useForm } from "react-hook-form"
 
@@ -25,7 +24,7 @@ const Register = () => {
             .catch(error => {
                 console.error(error);
             })
-            .then((result) => {
+            .then(() => {
                 return profileUpdate(name, photo);
             })
             .then(() => {
