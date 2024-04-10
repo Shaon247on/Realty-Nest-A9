@@ -4,6 +4,7 @@ import Login from '../../src/Components/Pages/Login/Login'
 import Register from '../../src/Components/Pages/Register/Register'
 import Root from "../Components/Root/Root";
 import PageNotFound from "../Components/Pages/PageNotFound/PageNotFound";
+import Profile from "../Components/Pages/Profile/Profile";
 const router = createBrowserRouter([
     {
       path: "/",
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
         {
             path:'/register',
             element:<Register></Register>
+        },
+        {
+          path: '/profile',
+          element: <Profile></Profile>
         }
       ]
     },

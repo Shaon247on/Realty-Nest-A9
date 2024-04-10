@@ -44,17 +44,13 @@ const Header = () => {
                 <div>
                     {
                         user ? <>
-                            <img title={user.displayName} src={user.photoURL} alt="" className="object-cover w-[44px] h-[44px] rounded-full" />
-
                             <details className="dropdown">
-                                <img title={user.displayName} src={user.photoURL} alt="" className="object-cover w-[44px] h-[44px] rounded-full" />
-
-                                <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-                                    <li><a>Item 1</a></li>
-                                    <li><a>Item 2</a></li>
+                                <summary ><img title={user.displayName} src={user.photoURL} alt="" className="avatar object-cover w-[44px] h-[44px] rounded-full" /></summary>
+                                <ul className="p-2 shadow menu text-black dropdown-content z-[1] bg-gradient-to-t from-[#8E793E] to-[#beb491] rounded-box w-72">
+                                    <li><Link className="hover:bg-[#231F20] hover:text-white"><span className="font-semibold ">User Name:</span> {user.displayName}</Link></li>
+                                    <li><Link to='/profile' className="text-center mx-auto text-lg hover:bg-[#231F20] hover:text-white">Profile Update</Link></li>
                                 </ul>
                             </details>
-
                         </> :
                             <><samp></samp></>
                     }
