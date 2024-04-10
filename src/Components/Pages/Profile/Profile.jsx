@@ -23,8 +23,10 @@ const Profile = () => {
                             <FaSquareXTwitter className="hover:bg-slate-400/50 rounded-[6px]"></FaSquareXTwitter>
                         </div>
                     </div>
-
                 </div>
+            </div>
+            <div className=" text-center mx-28">
+                <h1>User Details</h1>
             </div>
         </div>
     );
