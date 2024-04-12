@@ -11,6 +11,7 @@ const Header = () => {
 
     const { logOut, user } = useContext(AuthContext)
     console.log(user)
+    
     const [userData, setUserData] = useState('')
     useEffect( ()=>{
         setUserData(user)
@@ -52,22 +53,22 @@ const Header = () => {
                         user ? <>
                             <details className="dropdown dropdown-end">
                                 <summary ><img title={userData?.displayName} src={userData?.photoURL} alt="" className="avatar object-cover w-[44px] h-[44px] rounded-full" /></summary>
-                                <div className="p-2 shadow menu text-black dropdown-content z-[1] bg-gradient-to-t from-[#8E793E] to-[#AD974F] opacity-100 rounded-box w-[500px]">
+                                <div className="p-2 shadow menu text-black dropdown-content z-[1] bg-gradient-to-t from-[#8E793E] to-[#AD974F] opacity-100 rounded-box w-[250px] md:w-[500px]">
                                     {/* profile details */}
-                                    <div className="p-4 sm:flex sm:space-x-6 dark:bg-gray-50 dark:text-gray-800 w-[400px]">
+                                    <div className="p-4 sm:flex sm:space-x-6 dark:bg-gray-50 dark:text-gray-800 w-[210px] md:w-[400px]">
                                         <div className="flex-shrink-0 w-full mb-6 h-44 sm:h-32 sm:w-32 sm:mb-0">
                                             <img src={userData?.photoURL} alt="" className="object-cover object-center w-full h-full rounded dark:bg-gray-500" />
                                         </div>
                                         <div className="flex flex-col space-y-2">
                                             <div>
-                                                <h2 className="text-2xl font-semibold">{userData?.displayName}</h2>
+                                                <h2 className="text-lg lg:text-2xl font-semibold">{userData?.displayName}</h2>
                                                 <span className="text-sm dark:text-gray-600"></span>
                                             </div>
                                             <span className="flex items-center gap-2">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-label="Email address" className="w-4 h-4">
                                                     <path fill="currentColor" d="M274.6,25.623a32.006,32.006,0,0,0-37.2,0L16,183.766V496H496V183.766ZM464,402.693,339.97,322.96,464,226.492ZM256,51.662,454.429,193.4,311.434,304.615,256,268.979l-55.434,35.636L57.571,193.4ZM48,226.492,172.03,322.96,48,402.693ZM464,464H48V440.735L256,307.021,464,440.735Z"></path>
                                                 </svg>
-                                                <span className="dark:text-gray-600 text-lg font-medium">{user.email}</span>
+                                                <span className="dark:text-gray-600 text-base md:text-lg font-medium">{user.email}</span>
                                             </span>
                                             <div className="space-y-1">
 

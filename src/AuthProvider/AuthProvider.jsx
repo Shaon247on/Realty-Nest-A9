@@ -42,6 +42,12 @@ const AuthProvider = ({ children }) => {
             photoURL: photo
         })
     }
+    const nameUpdate = (name) => {
+        setLoading(true)
+        return updateProfile(auth.currentUser, {            
+            displayName: name
+        })
+    }
 
 
     const loginAuth = (email, password) => {
@@ -57,8 +63,12 @@ const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser => {
-            setUser(currentUser)
+            if(currentUser){
+                setUser(currentUser)
             setLoading(false)
+            }else{
+                setUser(null)
+            }
         }))
         return () => {
             unSubscribe()
@@ -77,7 +87,8 @@ const AuthProvider = ({ children }) => {
         googleLogin,
         githubLogin,
         twitterLogin,
-        photoUpdate
+        photoUpdate,
+        nameUpdate
     }
 
     return (

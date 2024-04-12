@@ -44,6 +44,7 @@ const Register = () => {
             .then(() => {
                  profileUpdate(name, photo);
             })
+            
             // .then((result) => {
             //     setUser(result.user)
             // })
