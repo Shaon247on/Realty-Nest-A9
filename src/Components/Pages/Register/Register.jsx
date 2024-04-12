@@ -1,7 +1,6 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
-import auth from "../../../firebase/firebase";
 import { useForm } from "react-hook-form"
 
 const Register = () => {
@@ -25,7 +24,7 @@ const Register = () => {
         setError('')
         setSuccess('')
 
-        console.log(name, email, password,typeof photo)
+        console.log(name, email, password, photo)
         if (!patternPassword.test(password)) {
             return setError('Kindly provide at least a uppercase, a lowercase & 6 digits of password')
         }
@@ -36,21 +35,21 @@ const Register = () => {
             .then(result => {
                 console.log(result.user)
                 setSuccess('Registration is Successful')
+                setUser(result.user)
             })
             .catch(error => {
                 console.error(error);
                 setError(error.message)
             })
             .then(() => {
-                return profileUpdate(name, photo);
+                 profileUpdate(name, photo);
             })
-            .then(() => {
-                // Update the user state with the current user
-                setUser(auth.currentUser);
-            })
-            .catch((error) => {
-                console.error(error);
-            });
+            // .then((result) => {
+            //     setUser(result.user)
+            // })
+            // .catch((error) => {
+            //     console.error(error);
+            // });
     }
     return (
         <div className="bg-animated p-0 md:p-20 lg:p-20 pt-4 md:pt-[18px]">

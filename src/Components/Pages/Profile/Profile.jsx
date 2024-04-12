@@ -5,7 +5,30 @@ import { FaGithub, FaSquareXTwitter } from "react-icons/fa6";
 import { FaPlusCircle } from "react-icons/fa";
 
 const Profile = () => {
-    const { user } = useContext(AuthContext)
+    const { user, loading, photoUpdate, setUser } = useContext(AuthContext)
+
+
+    const handlePhotoUpload = (e) => {
+        e.preventDefault()
+        const photo = e.target.photo.value
+        console.log(photo)
+         photoUpdate(photo)
+        .then(result=>{
+            console.log(result.user)
+            setUser(result.user)
+        })
+        .catch(error=>{
+            console.error(error);
+        })
+
+
+    }
+
+    if (loading) {
+        return <div className="w-full h-[600px] flex justify-center items-center bg-meteor">
+            <span className="loading loading-infinity w-[140px] mx-auto text-[#8E793E]"></span>
+        </div>
+    }
     return (
         <div className="">
             <div className="bg-meteor h-[600px] flex justify-center pt-14 ">
@@ -17,19 +40,20 @@ const Profile = () => {
                             <dialog id="my_modal_1" className="modal">
                                 <div className="modal-box">
                                     <h3 className="font-bold text-3xl text-center">Change Profile Photo</h3>
-                                    {/* <div className="form-control">
-                                        <label className="label w-80">
-                                            <span className="label-text">Name</span>
-                                        </label>
-                                        <input
-                                            name='name'
-                                            type="text"
-                                            placeholder="your name"
-                                            className="input input-bordered"
-                                            {...register("name", { required: true })}
-                                        />
-                                        {errors.name && <span className="text-red-500 mt-2">This field is required</span>}
-                                    </div> */}
+                                    <form onSubmit={handlePhotoUpload}>
+                                        <div className="form-control">
+                                            <label className="label">
+                                                <span className="label-text">Photo URL</span>
+                                            </label>
+                                            <input
+                                                name='photo'
+                                                type="text"
+                                                placeholder="your photo url"
+                                                className="input input-bordered"
+                                            />
+                                        </div>
+                                        <button className="btn bg-[#262626] text-white text-lg font-bold">Register </button>
+                                    </form>
                                     <div className="modal-action">
                                         <form method="dialog">
                                             {/* if there is a button in form, it will close the modal */}

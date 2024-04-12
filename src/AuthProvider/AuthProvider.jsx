@@ -36,6 +36,12 @@ const AuthProvider = ({ children }) => {
             photoURL: photo
         })
     }
+    const photoUpdate = (photo) => {
+        setLoading(true)
+        return updateProfile(auth.currentUser, {            
+            photoURL: photo
+        })
+    }
 
 
     const loginAuth = (email, password) => {
@@ -53,14 +59,11 @@ const AuthProvider = ({ children }) => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser => {
             setUser(currentUser)
             setLoading(false)
-
-
-
         }))
         return () => {
             unSubscribe()
         }
-    })
+    },[user?.photoURL, user?.displayName])
 
 
     const authInfo = {
@@ -73,7 +76,8 @@ const AuthProvider = ({ children }) => {
         profileUpdate,
         googleLogin,
         githubLogin,
-        twitterLogin
+        twitterLogin,
+        photoUpdate
     }
 
     return (
