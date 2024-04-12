@@ -10,7 +10,7 @@ const Header = () => {
     </>
 
     const { logOut, user } = useContext(AuthContext)
-    console.log(user)
+    
 
     const handleSignOut = () => {
         logOut()
@@ -46,7 +46,7 @@ const Header = () => {
                     {
                         user ? <>
                             <details className="dropdown dropdown-end">
-                                <summary ><img title={user.displayName} src={user.photoURL} alt="" className="avatar object-cover w-[44px] h-[44px] rounded-full" /></summary>
+                                <summary ><img title={user.displayName} src={user.photoURL ? user.photoURL : "https://i.ibb.co/GJ06kLS/no-user.jpg"} alt="" className="avatar object-cover w-[44px] h-[44px] rounded-full" /></summary>
                                 <div className="p-2 shadow menu text-black dropdown-content z-[1] bg-gradient-to-t from-[#8E793E] to-[#AD974F] opacity-100 rounded-box w-[500px]">
                                     {/* profile details */}
                                     <div className="p-4 sm:flex sm:space-x-6 dark:bg-gray-50 dark:text-gray-800 w-[400px]">
@@ -81,7 +81,7 @@ const Header = () => {
                 <div>
                     {
                         user ? <>
-                            <button onClick={handleSignOut} className="btn w-16 md:w-32 lg:w-36 bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#55482b] hover:to-[#a89a6c] text-white px-10">Sign Out</button>
+                            <button onClick={handleSignOut} className="btn w-16 md:w-32 lg:w-36 bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#55482b] hover:to-[#a89a6c] text-white px-10"><Link to='/register'>Sign Out</Link></button>
 
                         </> :
                             <button className="btn bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#55482b] hover:to-[#a89a6c] text-white px-10"> <Link to='/login'>Login</Link> </button>

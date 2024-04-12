@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import auth from "../../../firebase/firebase";
@@ -11,18 +11,35 @@ const Register = () => {
         handleSubmit,
         formState: { errors },
     } = useForm()
+    const [error, setError] = useState('')
+    const [success, setSuccess] = useState('')
+
     const { registerAuth, profileUpdate, setUser } = useContext(AuthContext)
+   
+
     const onSubmit = (data) => {
         console.log(data)
         const { name, email, photo, password } = data
-        console.log(name, email, password, photo)
+        const patternPassword = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/
+        const patternPhotoURL = /\.(jpeg|jpg|gif|png|bmp)$/i
+        setError('')
+        setSuccess('')
 
+        console.log(name, email, password,typeof photo)
+        if (!patternPassword.test(password)) {
+            return setError('Kindly provide at least a uppercase, a lowercase & 6 digits of password')
+        }
+        if(!patternPhotoURL.test(photo)){
+            return setError ('Kindly Provide a Valid photo URL')
+        }        
         registerAuth(email, password)
             .then(result => {
                 console.log(result.user)
+                setSuccess('Registration is Successful')
             })
             .catch(error => {
                 console.error(error);
+                setError(error.message)
             })
             .then(() => {
                 return profileUpdate(name, photo);
@@ -101,6 +118,16 @@ const Register = () => {
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn bg-[#262626] text-white text-lg font-bold">Register </button>
+                        </div>
+                        <div className="mt-3">
+                            {
+                                error === "Firebase: Error (auth/email-already-in-use)." ? <p className="text-red-500">Your account is already registered</p> : <p className="text-red-500">{error}</p>
+
+                            }
+                            {
+                                success && <p className="text-green-500">{success}</p>
+
+                            }
                         </div>
                     </form>
                 </div>
