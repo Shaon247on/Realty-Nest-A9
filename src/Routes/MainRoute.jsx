@@ -6,6 +6,7 @@ import Root from "../Components/Root/Root";
 import PageNotFound from "../Components/Pages/PageNotFound/PageNotFound";
 import Profile from "../Components/Pages/Profile/Profile";
 import BestOffers from "../Components/Sections/BestOffers";
+import Card from "../Components/Sections/Card";
 const router = createBrowserRouter([
     {
       path: "/",
@@ -33,7 +34,13 @@ const router = createBrowserRouter([
           path:'/best-offers',
           element:<BestOffers></BestOffers>,
           loader: ()=> fetch('/data.json')
-        }
+        },
+        {
+          path:'/:id',
+          element: <Card></Card>,
+          loader: ()=> fetch('/data.json')
+        },
+        
       ]
     },
   ]);

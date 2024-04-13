@@ -1,19 +1,22 @@
 import Banner from "../../Sections/Banner";
-import {useLoaderData} from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import BestOffers from "../../Sections/BestOffers";
+import ExploreProperty from "../../Sections/ExploreProperty";
 const Home = () => {
 
     const data = useLoaderData()
     console.log(data)
 
     return (
-        <div className="">       
+        <div className="">
             <div className="z-0">
                 <Banner props={data}></Banner>
-            </div>    
-            <div className=" px-1 md:px-20 z-10">
+            </div>
+            <div className=" mx-1 md:mx-10 lg:mx-20 z-10">
                 <BestOffers></BestOffers>
-                
+            </div>
+            <div className="mx-1 md:mx-10 lg:mx-20">
+                <ExploreProperty data={data}></ExploreProperty>
             </div>
         </div>
     );

@@ -13,7 +13,7 @@ const BestOffers = () => {
         'col-span-4 md:col-span-4 lg:col-span-2'
     ]
     return (
-        <div className='mt-20'>
+        <div className='mt-28'>
             <div className=' text-center'>
                 <h1 className='text-2xl md:text-4xl font-bold mb-5'>Best offers this week</h1>
                 <p className='w-[260px] text-[13px] md:text-base md:w-[600px] mx-auto text-[#231F20B3] mb-10'>Unlock your dream home with our exclusive offer this week! Enjoy unbeatable discounts on property prices, making homeownership more affordable than ever.</p>
