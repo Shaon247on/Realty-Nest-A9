@@ -11,7 +11,7 @@ const Home = () => {
             <div className="z-0">
                 <Banner props={data}></Banner>
             </div>    
-            <div className="bg-red-500 px-20 z-0">
+            <div className=" px-20 z-10">
                 <BestOffers></BestOffers>
                 
             </div>

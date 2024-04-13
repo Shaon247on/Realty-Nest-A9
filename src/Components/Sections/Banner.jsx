@@ -19,7 +19,7 @@ const Banner = () => {
         <Swiper
             // install Swiper modules
             modules={[Navigation, Pagination]}
-            className='max-w-[100%] border-2 border-red-300 text-[#AD974F]'
+            className='max-w-[100%]  text-[#AD974F]'
             navigation
             loop
             speed={800}
@@ -34,7 +34,7 @@ const Banner = () => {
             <SwiperSlide>
                 <div className='flex flex-col gap-6 group md:left-[0px] relative mr-16 shadow-lg text-white p-6 h-[650px] md:h-[600px] w-full overflow-hidden'>
                     <div className='absolute inset-0 bg-family bg-no-repeat bg-cover bg-center bg-siz' />
-                    <div className='absolute inset-0 bg-black opacity-60 ' />
+                    <div className='absolute inset-0 bg-black opacity-60'/>
                     <div className='relative top-24 space-y-5 px-6 lg:pl-28'>
                         <h2 className='text-white text-3xl md:text-6xl font-Josefin'>Single Family House</h2>
                         <p className='md:w-[500px] text-lg text-[#9F9F9F]'>Experience the epitome of suburban living with our exceptional selection of single-family homes. Each residence offers a perfect blend of comfort, style, and functionality, featuring spacious layouts and upscale finishes.......</p>
