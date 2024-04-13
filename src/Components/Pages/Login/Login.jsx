@@ -40,7 +40,7 @@ const Login = () => {
             <div className="text-center mt-[80px] lg:mt-[23px]">
                 <p className="text-3xl md:text-5xl font-bold text-[#AD974F]">Login Now</p>
             </div>
-            <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row border-2 border-red-200 h-[650px] md:h-[900px] lg:h-[550px] mx-auto bg-base-200 items-center gap-2 mt-[23px] rounded-none md:rounded-xl lg:rounded-xl overflow-hidden px-7 justify-end md:justify-center lg:justify-between p-0 md:p-5 lg:p-5">
+            <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row h-[650px] md:h-[900px] lg:h-[550px] mx-auto bg-base-200 items-center gap-2 mt-[23px] rounded-none md:rounded-xl lg:rounded-xl overflow-hidden px-7 justify-end md:justify-center lg:justify-between p-0 md:p-5 lg:p-5">
                 <div className="shrink-0 w-[80%] md:w-3/4 lg:w-1/2  lg:h-[400px] bg-base-100 md:px-0 lg:px-10">
                     <form onSubmit={handleSubmit(onSubmit)} className="lg:py-7">
                         <div className="form-control">

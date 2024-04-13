@@ -23,7 +23,7 @@ const BestOffers = () => {
                     datas.slice(0, 5).map((data, index) =>
                         <div key={index}
                             className={`${imageClasses[index]} relative overflow-hidden `}>
-                            <Link>
+                            <Link to={`/${data.id}`}>
                                 <div className=' absolute z-20 bottom-2 right-3 '>
                                     <p className='font-bold text-[18px] bg-white text-black px-2 rounded-sm'>${data.price}</p>
                                 </div>
