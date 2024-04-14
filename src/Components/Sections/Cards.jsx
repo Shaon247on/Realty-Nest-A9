@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { LiaVectorSquareSolid } from "react-icons/lia";
 import { IoHomeOutline } from "react-icons/io5";
 const Cards = ({ prop }) => {
-    const { img, Status, id, estate_title, price, simple_address, full_address, Area, bedroom, description } = prop
+    const { img, Status, estate_title, price, id, simple_address, full_address, Area, bedroom, description } = prop
     return (
         <div className="rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800 mx-4 md:h-[640px] lg:h-[630px]">
             <div className='overflow-hidden rounded-t-md relative h-[280px] '>
@@ -23,7 +23,7 @@ const Cards = ({ prop }) => {
                     </div>
                     <p className="dark:text-gray-800 mt-4 flex-grow">{description.slice(0,130)}....</p>
                 </div>
-                <button className="btn bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-b hover:from-[#725f3a] hover:to-[#ac9b65] text-white"><Link to={`/${id}`}>View Details</Link></button>
+                <Link className='btn bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-b hover:from-[#725f3a] hover:to-[#ac9b65] text-white' to={`/${id}`}><button>View Details</button></Link>
             </div>
         </div>
     );

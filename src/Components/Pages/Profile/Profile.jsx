@@ -15,7 +15,6 @@ const Profile = () => {
         setError('')
         const patternPhotoURL = /\.(jpeg|jpg|gif|png|bmp)$/i
         const photo = e.target.photo.value
-        console.log(photo)
         if(!patternPhotoURL.test(photo)){
             return setError ('Kindly Provide a Valid photo URL')
         }

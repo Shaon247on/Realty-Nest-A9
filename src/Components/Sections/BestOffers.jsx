@@ -4,7 +4,6 @@ const BestOffers = () => {
 
 
     const datas = useLoaderData()
-    console.log(datas)
     const imageClasses = [
         'col-span-4 md:col-span-4 lg:col-span-2',
         'col-span-4 md:col-span-2 lg:col-span-1',

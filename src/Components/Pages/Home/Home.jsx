@@ -5,7 +5,6 @@ import ExploreProperty from "../../Sections/ExploreProperty";
 const Home = () => {
 
     const data = useLoaderData()
-    console.log(data)
 
     return (
         <div className="">

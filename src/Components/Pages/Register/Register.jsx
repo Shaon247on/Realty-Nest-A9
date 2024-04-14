@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import { useForm } from "react-hook-form"
+import toast, { Toaster } from 'react-hot-toast';
 
 const Register = () => {
 
@@ -17,14 +18,12 @@ const Register = () => {
    
 
     const onSubmit = (data) => {
-        console.log(data)
         const { name, email, photo, password } = data
         const patternPassword = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/
         const patternPhotoURL = /\.(jpeg|jpg|gif|png|bmp)$/i
         setError('')
         setSuccess('')
 
-        console.log(name, email, password, photo)
         if (!patternPassword.test(password)) {
             return setError('Kindly provide at least a uppercase, a lowercase & 6 digits of password')
         }
@@ -34,8 +33,9 @@ const Register = () => {
         registerAuth(email, password)
             .then(result => {
                 console.log(result.user)
-                setSuccess('Registration is Successful')
                 setUser(result.user)
+                const notify = () => toast.success('Account successfully registered');
+                notify()
             })
             .catch(error => {
                 console.error(error);
@@ -43,17 +43,14 @@ const Register = () => {
             })
             .then(() => {
                  profileUpdate(name, photo);
-            })
-            
-            // .then((result) => {
-            //     setUser(result.user)
-            // })
-            // .catch((error) => {
-            //     console.error(error);
-            // });
+            })            
     }
     return (
         <div className="bg-animated p-0 md:p-20 lg:p-20 pt-4 md:pt-[18px]">
+            <Toaster
+            position="top-right"
+            reverseOrder={true}
+            />
             <div className="text-center mt-[75px] lg:mt-[23px]">
                 <p className="text-3xl md:text-5xl font-bold text-[#AD974F]">Register Now</p>
             </div>

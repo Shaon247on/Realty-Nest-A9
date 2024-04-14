@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import { useForm } from "react-hook-form"
 import SocialLogin from "../../Elements/SocialLogin";
+import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
 
-    const [error, setError] =useState('')
-    const [success, setSuccess] =useState('')
+    const [error, setError] = useState('')
+    const [success, setSuccess] = useState('')
 
     const {
         register,
@@ -18,18 +19,20 @@ const Login = () => {
     const { loginAuth } = useContext(AuthContext)
 
     const onSubmit = (data) => {
-        console.log(data)
         const { email, password } = data
         setError('')
         setSuccess('')
         loginAuth(email, password)
             .then(result => {
                 console.log(result.user)
-                setSuccess('Successfully logged in')
+                const notify = () => toast.success('Successfully logged in');
+                notify()
+                
             })
             .catch(error => {
                 console.error(error);
                 setError('error.message')
+
             })
     }
 
@@ -37,6 +40,10 @@ const Login = () => {
 
     return (
         <div className="bg-animated p-0 md:p-20 lg:p-20 pt-[18px]">
+            <Toaster
+            position="top-right"
+            reverseOrder={true}
+            />
             <div className="text-center mt-[80px] lg:mt-[23px]">
                 <p className="text-3xl md:text-5xl font-bold text-[#AD974F]">Login Now</p>
             </div>
@@ -77,7 +84,7 @@ const Login = () => {
                         </div>
                         <div>
                             {
-                                
+
                             }
                         </div>
                     </form>
@@ -88,7 +95,7 @@ const Login = () => {
                             <div className="border-[1px] border-stone-600 w-full"></div>
                         </div>
                         <div className="space-x-5 text-center mt-4">
-                            <SocialLogin></SocialLogin>                            
+                            <SocialLogin></SocialLogin>
                         </div>
                     </div>
                 </div>
