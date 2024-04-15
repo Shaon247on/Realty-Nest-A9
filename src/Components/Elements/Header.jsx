@@ -33,10 +33,7 @@ const Header = () => {
                         {navLink}
                     </ul>
                 </div>
-                <div className="flex items-center">
-                    <img src="/src/assets/Untitled design.png" alt="" className="h-[40px] w-[40px] rounded-full" />
-                    <Link to='/'><button className="btn btn-ghost text-lg md:text-2xl font-bold">Realty <span className="text-[#AD974F]">Nest</span></button></Link>
-                </div>
+                <Link to='/'><button className="btn btn-ghost text-lg md:text-2xl font-bold">Realty <span className="text-[#AD974F]">Nest</span></button></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
