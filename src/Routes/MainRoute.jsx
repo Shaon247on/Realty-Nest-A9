@@ -7,6 +7,7 @@ import PageNotFound from "../Components/Pages/PageNotFound/PageNotFound";
 import Profile from "../Components/Pages/Profile/Profile";
 import BestOffers from "../Components/Sections/BestOffers";
 import Card from "../Components/Sections/Card";
+import PrivateRoute from "./PrivateRoute";
 const router = createBrowserRouter([
     {
       path: "/",
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
         },
         {
           path:'/:id',
-          element: <Card></Card>,
+          element: <PrivateRoute><Card></Card></PrivateRoute>,
           loader: ()=> fetch('data.json')
         },
         

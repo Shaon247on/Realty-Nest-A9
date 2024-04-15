@@ -8,9 +8,9 @@ const PageNotFound = () => {
                     <h2 className="mb-8 font-extrabold text-9xl text-gray-600">
                         <span className="sr-only">Error</span>404
                     </h2>
-                    <p className="text-2xl font-semibold md:text-3xl">Sorry, we couldn't find this page.</p>
-                    <p className="mt-4 mb-8 text-gray-400">But don't worry, you can find plenty of other things on our homepage.</p>
-                    <button className="btn w-56 bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#55482b] hover:to-[#a89a6c] text-white px-10"> <Link to='/'>Beck to Homepage</Link> </button>
+                    <p className="text-2xl font-semibold md:text-3xl">Sorry, we couldn&apos;t find this page.</p>
+                    <p className="mt-4 mb-8 text-gray-400">But don&apos;t worry, you can find plenty of other things on our homepage.</p>
+                    <Link to='/'><button className="btn w-56 bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#55482b] hover:to-[#a89a6c] text-white px-10">Beck to Homepage</button></Link>
                 </div>
             </div>
         </section>

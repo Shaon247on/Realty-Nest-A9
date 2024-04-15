@@ -26,7 +26,10 @@
       "Cable_TV": 10,
       "full_address": "123 University Ave, Townsville",
       "simple_address": "University Ave",
-      "Electricity": "Included"
+      "Electricity": "Included",
+      "Zip_code": "4810",
+      "Country": "America",
+      "Coordinate": [34.391514, -118.567735]
     },
     {
       "img": "https://i.ibb.co/gZf1PTd/vacation-rentals.jpg ",
@@ -55,7 +58,10 @@
       "Cable_TV": 10,
       "full_address": "456 Ocean Blvd, Beachtown",
       "simple_address": "Ocean Blvd",
-      "Electricity": "Extra Charge"
+      "Electricity": "Extra Charge",
+      "Zip_code": "5701",
+      "Country": "America",
+      "Coordinate": [34.429597, -118.427574]
     },
     {
       "img": "https://i.ibb.co/dLdvDB3/townhouse.jpg",
@@ -84,7 +90,10 @@
       "Cable_TV": 25,
       "full_address": "789 Main St, Downtown",
       "simple_address": "Main St",
-      "Electricity": "Included"
+      "Electricity": "Included",
+      "Zip_code": "60002",
+      "Country": "America",
+      "Coordinate": [34.319833, -118.466074]
     },
     {
       "img": "https://i.ibb.co/rvFwZDf/apartments.jpg",
@@ -113,7 +122,10 @@
       "Cable_TV": 15,
       "full_address": "101 Skyline Ave, Downtown",
       "simple_address": "Skyline Ave",
-      "Electricity": "Extra Charge"
+      "Electricity": "Extra Charge",
+      "Zip_code": "Extra 59404",
+      "Country": "America",
+      "Coordinate": [34.264297, -118.527681]
     },
     {
       "img": "https://i.ibb.co/KsVtC5K/senior-living-communities.jpg",
@@ -142,7 +154,10 @@
       "Cable_TV": 10,
       "full_address": "222 Serenity Ln, Elderly Estates",
       "simple_address": "Serenity Ln",
-      "Electricity": "Included"
+      "Electricity": "Included",
+      "Zip_code": "30188",
+      "Country": "America",
+      "Coordinate": [34.108120, -118.337880]
     },
     {
       "img": "https://i.ibb.co/cQvq5NZ/Single-family-homes.jpg",
@@ -171,7 +186,10 @@
       "Cable_TV": 19,
       "full_address": "321 Maple Dr, Suburbia",
       "simple_address": "Maple Dr",
-      "Electricity": "Extra Charge"
+      "Electricity": "Extra Charge",
+      "Zip_code": "78154",
+      "Country": "America",
+      "Coordinate": [34.225344, -118.537222]
     },
     {
       "img": "https://i.ibb.co/XySVsR4/student-housing2.jpg",
@@ -200,7 +218,10 @@
       "Cable_TV": 16,
       "full_address": "777 University Ave, Collegeland",
       "simple_address": "University Ave",
-      "Electricity": "Included"
+      "Electricity": "Included",
+      "Zip_code": "53715 ",
+      "Country": "America",
+      "Coordinate": [34.236811, -118.534066]
     },
     {
       "img": "https://i.ibb.co/SBLRyfR/apartments2.jpg",
@@ -229,7 +250,10 @@
       "Cable_TV": 20,
       "full_address": "888 City Blvd, Downtown",
       "simple_address": "City Blvd",
-      "Electricity": "Extra Charge"
+      "Electricity": "Extra Charge",
+      "Zip_code": "93501",
+      "Country": "America",
+      "Coordinate": [34.241706, -118.536312]
     },
     {
       "img": "https://i.ibb.co/Wv8tbdj/townhouses2.jpg",
@@ -258,7 +282,10 @@
       "Cable_TV": 22,
       "full_address": "555 Main St, Downtown",
       "simple_address": "Main St",
-      "Electricity": "Included"
+      "Electricity": "Included",
+      "Zip_code": "95928",
+      "Country": "America",
+      "Coordinate": [34.262067, -118.527522]
     }
   ]
   

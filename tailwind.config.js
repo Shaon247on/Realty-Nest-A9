@@ -14,7 +14,7 @@ export default {
         'wave': 'url("/src/assets/Wave-Line.svg")'
       },
       fontFamily:{
-        'Josefin':'"Josefin Sans", sans-serif;'
+        'open':'"Open Sans", sans-serif;'
       }      
     },
   },

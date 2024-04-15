@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import { useForm } from "react-hook-form"
 import SocialLogin from "../../Elements/SocialLogin";
@@ -17,6 +17,9 @@ const Login = () => {
     } = useForm()
 
     const { loginAuth } = useContext(AuthContext)
+    const location = useLocation() 
+    const navigate = useNavigate()
+    console.log('location in the login page:',location)
 
     const onSubmit = (data) => {
         const { email, password } = data
@@ -27,6 +30,7 @@ const Login = () => {
                 console.log(result.user)
                 const notify = () => toast.success('Successfully logged in');
                 notify()
+                navigate(location?.state ? location.state : '/')
                 
             })
             .catch(error => {

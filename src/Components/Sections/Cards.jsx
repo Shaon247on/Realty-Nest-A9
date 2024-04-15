@@ -14,7 +14,7 @@ const Cards = ({ prop }) => {
             </div>
             <div className="flex flex-col justify-between mt-5 p-2">
                 <div className='mb-4 flex-auto h-[260px] lg:h-[240px]'>
-                    <h2 className="text-2xl font-semibold tracking-wide mb-3">{estate_title}</h2>
+                    <h2 className="text-2xl font-bold tracking-wide mb-3 font-open">{estate_title}</h2>
                     <h3 className='text-lg font-semibold'>{simple_address}</h3>
                     <h3 className='text-base text-[#231F2066]'>{full_address}</h3>
                     <div className='flex items-center justify-between'>

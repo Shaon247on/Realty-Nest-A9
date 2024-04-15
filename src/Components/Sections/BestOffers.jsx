@@ -27,7 +27,7 @@ const BestOffers = () => {
                                     <p className='font-bold text-[18px] bg-white text-black px-2 rounded-sm'>${data.price}</p>
                                 </div>
                                 <div className='absolute bottom-2 left-1 z-20'>
-                                    <h3 className='text-base md:text-lg font-bold text-white'>{data.simple_address}</h3>
+                                    <h3 className='text-base md:text-lg font-bold font-open text-white'>{data.simple_address}</h3>
                                     <h3 className='text-[12px] md:text-[13px] font-semibold text-white'>{data.full_address}</h3>
                                 </div>
                                 <div className='absolute w-full h-full z-0'>

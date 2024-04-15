@@ -1,9 +1,36 @@
 .zoom-effect {
-    transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+}
+
+.zoom-effect:hover {
+  transform: scale(1.05);
+}
+
+.try {
+  border: 2px solid red;
+}
+
+/* map css */
+
+.leaflet-container {
+  height: 500px;
+  width: 600px;
+  z-index: 0;
+
+}
+
+/* for medium device */
+@media (max-width: 768px) {
+  .leaflet-container {
+    height: 400px;
+    width: 500px;
   }
-  .zoom-effect:hover {
-    transform: scale(1.05);
+}
+
+/* For small devices */
+@media (max-width: 576px) {
+  .leaflet-container {
+    height: 200px;
+    width: 300px;
   }
-  .try{
-    border: 2px solid red;
-  }
+}
