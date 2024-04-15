@@ -52,7 +52,7 @@ const Banner = () => {
                                 </div>
                             </div>
                         </div>
-                        <Link className="btn bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-b hover:from-[#725f3a] hover:to-[#ac9b65] text-white" to='/6'><button >View Details</button></Link>
+                        <Link className="btn bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#725f3a] hover:to-[#ac9b65] text-white" to='/6'><button >View Details</button></Link>
                     </div>
                 </div>
             </SwiperSlide>
@@ -76,7 +76,7 @@ const Banner = () => {
                                 </div>
                             </div>
                         </div>
-                        <Link className="btn bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-b hover:from-[#725f3a] hover:to-[#ac9b65] text-white" to='/2'><button >View Details</button></Link>
+                        <Link className="btn bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#725f3a] hover:to-[#ac9b65] text-white" to='/2'><button >View Details</button></Link>
                     </div>
                 </div>
             </SwiperSlide>
@@ -100,7 +100,7 @@ const Banner = () => {
                                 </div>
                             </div>
                         </div>
-                        <Link className="btn bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-b hover:from-[#725f3a] hover:to-[#ac9b65] text-white" to='/4'><button >View Details</button></Link>
+                        <Link className="btn bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#725f3a] hover:to-[#ac9b65] text-white" to='/4'><button >View Details</button></Link>
                     </div>
                 </div>
             </SwiperSlide>

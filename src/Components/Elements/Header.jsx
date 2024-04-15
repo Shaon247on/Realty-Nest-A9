@@ -23,7 +23,7 @@ const Header = () => {
     }
 
     return (
-        <div className="flex justify-between w-full fixed bg-[#262626] text-white px-2 lg:px-20 py-3 items-center z-50 shadow-sm opacity-85">
+        <div className="flex justify-between w-full fixed bg-[#262626] text-white px-2 lg:px-20 py-3 items-center z-50 shadow-sm opacity-90">
             <div className="flex items-center">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -33,7 +33,10 @@ const Header = () => {
                         {navLink}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-lg md:text-2xl font-bold">Realty <span className="text-[#AD974F]">Nest</span></a>
+                <div className="flex items-center">
+                    <img src="/src/assets/Untitled design.png" alt="" className="h-[40px] w-[40px] rounded-full" />
+                    <Link to='/'><button className="btn btn-ghost text-lg md:text-2xl font-bold">Realty <span className="text-[#AD974F]">Nest</span></button></Link>
+                </div>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -83,7 +86,7 @@ const Header = () => {
                             <Link to='/login'><button onClick={handleSignOut} className="btn w-16 md:w-32 lg:w-36 bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#55482b] hover:to-[#a89a6c] text-white px-10">Sign Out</button></Link>
 
                         </> :
-                            <Link to='/login'><button className="btn bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#55482b] hover:to-[#a89a6c] text-white px-10">Login</button></Link>
+                            <Link to='/login'><button className="btn bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#55482b]  hover:to-[#a89a6c]  text-white px-10">Login</button></Link>
                     }
                 </div>
             </div>

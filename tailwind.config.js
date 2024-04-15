@@ -11,7 +11,8 @@ export default {
         'rentals': 'url("https://i.ibb.co/R0vDshk/vacation-rentals.jpg")',
         'animated': 'url("/src/assets/Animated-Shape.svg")',
         'meteor': 'url("/src/assets/Meteor.svg")',
-        'wave': 'url("/src/assets/Wave-Line.svg")'
+        'wave': 'url("/src/assets/Wave-Line.svg")',
+        'logo': 'url("/src/assets/Untitled design.png")'
       },
       fontFamily:{
         'open':'"Open Sans", sans-serif;'

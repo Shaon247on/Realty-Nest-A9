@@ -21,7 +21,8 @@ const Profile = () => {
          photoUpdate(photo)
         .then(result=>{
             console.log(result.user)
-            setUser(result.user)            
+            setUser(result.user) 
+            window.location.reload()           
         })
         .catch(error=>{
             console.error(error);
@@ -39,6 +40,7 @@ const Profile = () => {
         .then(result=>{
             console.log(result.user)
             setUser(result.user)
+            window.location.reload()
         })
         .catch(error=>{
             console.error(error);
@@ -56,7 +58,7 @@ const Profile = () => {
                 <div className="flex flex-col items-center justify-center ">
                     <div className="w-[300px] h-[300px] border-[23px] relative border-[#AD974F33] rounded-full mb-[-140px] z-10">
                         <div className="absolute text-[30px] right-[35px] top-[25px]">
-                            <button title="Change Photo" className="" onClick={() => document.getElementById('my_modal_1').showModal()}><FaPlusCircle></FaPlusCircle> </button>
+                            <button title="Upload Photo" className="hover:bg-slate-400/90 duration-[400ms] ease-in-out rounded-full" onClick={() => document.getElementById('my_modal_1').showModal()}><FaPlusCircle></FaPlusCircle> </button>
                             <dialog id="my_modal_1" className="modal">
                                 <div className="modal-box bg-wave">
                                     <h3 className="font-bold text-3xl text-center text-white">Change Profile Photo</h3>
@@ -94,7 +96,7 @@ const Profile = () => {
 
                     <div className="bg-[#1d1d1d] h-[320px] w-[310px] rounded-lg z-0 pt-40 text-center space-y-4 relative">
                     <div className="absolute text-[25px] right-[35px] bottom-[105px] lg:bottom-[108px] z-50">
-                            <button title="Change Name" className="" onClick={() => document.getElementById('my_modal_2').showModal()}> <CiEdit className="text-[#3F372A] font-bold"></CiEdit> </button>
+                            <button title="Change Name" className="hover:bg-slate-400/50 duration-[400ms] ease-in-out rounded-full p-1" onClick={() => document.getElementById('my_modal_2').showModal()}> <CiEdit className="text-[#3F372A] font-bold"></CiEdit> </button>
                             <dialog id="my_modal_2" className="modal">
                                 <div className="modal-box bg-wave">
                                     <h3 className="font-bold text-3xl text-center text-white">Change Profile Name</h3>
@@ -126,9 +128,9 @@ const Profile = () => {
                         <h1 className="text-lg font-medium text-white font-serif">{user.displayName}</h1>
                         <p className="font-medium text-[#96959571] font-serif z-50">{user.email}</p>
                         <div className=" text-[40px] flex justify-center gap-5">
-                            <FaGoogle className="hover:bg-slate-400/50 rounded-full"></FaGoogle>
-                            <FaGithub className="hover:bg-slate-400/50 rounded-full"></FaGithub>
-                            <FaSquareXTwitter className="hover:bg-slate-400/50 rounded-[6px]"></FaSquareXTwitter>
+                            <FaGoogle className="hover:bg-slate-400/50 duration-[400ms] ease-in-out rounded-full"></FaGoogle>
+                            <FaGithub className="hover:bg-slate-400/50 duration-[400ms] ease-in-out rounded-full"></FaGithub>
+                            <FaSquareXTwitter className="hover:bg-slate-400/50 duration-[400ms] ease-in-out rounded-[6px]"></FaSquareXTwitter>
                         </div>
                     </div>
                 </div>

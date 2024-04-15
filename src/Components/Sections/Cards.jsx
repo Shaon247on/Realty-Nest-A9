@@ -23,7 +23,7 @@ const Cards = ({ prop }) => {
                     </div>
                     <p className="dark:text-gray-800 mt-4 flex-grow">{description.slice(0,130)}....</p>
                 </div>
-                <Link className='btn bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-b hover:from-[#725f3a] hover:to-[#ac9b65] text-white' to={`/${id}`}><button>View Details</button></Link>
+                <Link className='btn bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t  hover:from-[#725f3a] hover:to-[#ac9b65] text-white' to={`/${id}`}><button>View Details</button></Link>
             </div>
         </div>
     );
