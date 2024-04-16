@@ -16,7 +16,7 @@ const Login = () => {
         handleSubmit,
         formState: { errors },
     } = useForm()
-    const [hidden, setHidden] = useState(true)
+    const [hidden, setHidden] = useState(false)
     const { loginAuth } = useContext(AuthContext)
     const location = useLocation()
     const navigate = useNavigate()
@@ -24,7 +24,7 @@ const Login = () => {
 
     const onSubmit = (data) => {
         const { email, password } = data
-        setError('')
+        setError('')       
         loginAuth(email, password)
             .then(result => {
                 console.log(result.user)

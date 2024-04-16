@@ -42,51 +42,60 @@ const Header = () => {
                 </ul>
             </div>
             <div className="flex items-center gap-2  md:gap-6">
-                <div>
-                    {
-                        user ? <>
-                            <details className="dropdown dropdown-end">
-                                <summary ><img title={user?.displayName} src={user.photoURL} alt="" className="avatar object-cover w-[38px] md:w-[44px] h-[38px] md:h-[44px] rounded-full" /></summary>
-                                <div className="p-2 shadow menu text-black dropdown-content z-[1] bg-gradient-to-t from-[#8E793E] to-[#AD974F] opacity-100 rounded-box w-[250px] md:w-[500px]">
-                                    {/* profile details */}
-                                    <div className="p-4 sm:flex sm:space-x-6 dark:bg-gray-50 dark:text-gray-800 w-[210px] md:w-[400px]">
-                                        <div className="flex-shrink-0 w-full mb-6 h-44 sm:h-32 sm:w-32 sm:mb-0">
-                                            <img src={user?.photoURL} alt="" className="object-cover object-center w-full h-full rounded dark:bg-gray-500" />
-                                        </div>
-                                        <div className="flex flex-col space-y-2">
-                                            <div>
-                                                <h2 className="text-lg lg:text-2xl font-semibold">{user?.displayName}</h2>
-                                                <span className="text-sm dark:text-gray-600"></span>
+                {
+                    user ? <>
+                        <div>
+                            {
+
+                                user ?
+
+
+                                    <>
+                                        <details className="dropdown dropdown-end">
+                                            <summary ><img title={user?.displayName} src={user.photoURL} alt="" className="avatar object-cover w-[38px] md:w-[44px] h-[38px] md:h-[44px] rounded-full" /></summary>
+                                            <div className="p-2 shadow menu text-black dropdown-content z-[1] bg-gradient-to-t from-[#8E793E] to-[#AD974F] opacity-100 rounded-box w-[250px] md:w-[500px]">
+                                                {/* profile details */}
+                                                <div className="p-4 sm:flex sm:space-x-6 dark:bg-gray-50 dark:text-gray-800 w-[210px] md:w-[400px]">
+                                                    <div className="flex-shrink-0 w-full mb-6 h-44 sm:h-32 sm:w-32 sm:mb-0">
+                                                        <img src={user?.photoURL} alt="" className="object-cover object-center w-full h-full rounded dark:bg-gray-500" />
+                                                    </div>
+                                                    <div className="flex flex-col space-y-2">
+                                                        <div>
+                                                            <h2 className="text-lg lg:text-2xl font-semibold">{user?.displayName}</h2>
+                                                            <span className="text-sm dark:text-gray-600"></span>
+                                                        </div>
+                                                        <span className="flex items-center gap-2">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-label="Email address" className="w-4 h-4">
+                                                                <path fill="currentColor" d="M274.6,25.623a32.006,32.006,0,0,0-37.2,0L16,183.766V496H496V183.766ZM464,402.693,339.97,322.96,464,226.492ZM256,51.662,454.429,193.4,311.434,304.615,256,268.979l-55.434,35.636L57.571,193.4ZM48,226.492,172.03,322.96,48,402.693ZM464,464H48V440.735L256,307.021,464,440.735Z"></path>
+                                                            </svg>
+                                                            <span className="dark:text-gray-600 text-base md:text-lg font-medium">{user.email}</span>
+                                                        </span>
+                                                        <div className="space-y-1">
+
+                                                            <span className="flex items-center space-x-2">
+                                                                <Link to='/profile' href="#" role="button" className="inline-block rounded-full bg-zinc-500 text-black  shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] hover:bg-zinc-600 hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-zinc-800 focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] active:bg-zinc-700 active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] px-6 pb-2 pt-2.5 text-xs font-extrabold uppercase leading-normal transition duration-150 ease-in-out focus:outline-none focus:ring-0">Update Profile</Link></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
                                             </div>
-                                            <span className="flex items-center gap-2">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-label="Email address" className="w-4 h-4">
-                                                    <path fill="currentColor" d="M274.6,25.623a32.006,32.006,0,0,0-37.2,0L16,183.766V496H496V183.766ZM464,402.693,339.97,322.96,464,226.492ZM256,51.662,454.429,193.4,311.434,304.615,256,268.979l-55.434,35.636L57.571,193.4ZM48,226.492,172.03,322.96,48,402.693ZM464,464H48V440.735L256,307.021,464,440.735Z"></path>
-                                                </svg>
-                                                <span className="dark:text-gray-600 text-base md:text-lg font-medium">{user.email}</span>
-                                            </span>
-                                            <div className="space-y-1">
+                                        </details>
+                                    </> :
+                                    <><samp></samp></>
+                            }
+                        </div>
+                        <div>
+                            {
+                                user ? <>
+                                    <Link to='/login'><button onClick={handleSignOut} className="btn w-24 md:w-32 lg:w-36 bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#55482b] hover:to-[#a89a6c] text-white px-2 lg:px-10">Sign Out</button></Link>
 
-                                                <span className="flex items-center space-x-2">
-                                                    <Link to='/profile' href="#" role="button" className="inline-block rounded-full bg-zinc-500 text-black  shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] hover:bg-zinc-600 hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-zinc-800 focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] active:bg-zinc-700 active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] px-6 pb-2 pt-2.5 text-xs font-extrabold uppercase leading-normal transition duration-150 ease-in-out focus:outline-none focus:ring-0">Update Profile</Link></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </details>
-                        </> :
-                            <><samp></samp></>
-                    }
-                </div>
-                <div>
-                    {
-                        user ? <>
-                            <Link to='/login'><button onClick={handleSignOut} className="btn w-24 md:w-32 lg:w-36 bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#55482b] hover:to-[#a89a6c] text-white px-2 lg:px-10">Sign Out</button></Link>
-
-                        </> :
-                            <Link to='/login'><button className="btn bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#55482b]  hover:to-[#a89a6c]  text-white px-10">Login</button></Link>
-                    }
-                </div>
+                                </> :
+                                    <Link to='/login'><button className="btn bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#55482b]  hover:to-[#a89a6c]  text-white px-10">Login</button></Link>
+                            }
+                        </div>
+                    </>:
+                    <div className="flex items-center justify-center w-[228px] h-[48px]"> <span className="loading loading-infinity w-[50px]"></span></div>
+                }
             </div>
         </div>
     );

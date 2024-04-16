@@ -54,7 +54,7 @@ const Profile = () => {
     }
     return (
         <div className="">
-            <div className="bg-meteor h-[600px] flex justify-center pt-14 ">
+            <div className="bg-meteor h-[640px] flex justify-center pt-14 ">
                 <div className="flex flex-col items-center justify-center ">
                     <div className="w-[300px] h-[300px] border-[23px] relative border-[#AD974F33] rounded-full mb-[-140px] z-10">
                         <div className="absolute text-[30px] right-[35px] top-[25px]">
@@ -94,8 +94,8 @@ const Profile = () => {
 
 
 
-                    <div className="bg-[#1d1d1d] h-[320px] w-[310px] rounded-lg z-0 pt-40 text-center space-y-4 relative">
-                    <div className="absolute text-[25px] right-[35px] bottom-[105px] lg:bottom-[108px] z-50">
+                    <div className="bg-[#1d1d1d] h-[350px] w-[310px] rounded-lg z-0 pt-40 text-center space-y-4 relative">
+                    <div className="absolute text-[25px] right-[35px] bottom-[139px] lg:bottom-[139px] z-50">
                             <button title="Change Name" className="hover:bg-slate-400/50 duration-[400ms] ease-in-out rounded-full p-1" onClick={() => document.getElementById('my_modal_2').showModal()}> <CiEdit className="text-[#3F372A] font-bold"></CiEdit> </button>
                             <dialog id="my_modal_2" className="modal">
                                 <div className="modal-box bg-wave">
@@ -127,6 +127,7 @@ const Profile = () => {
                         </div>
                         <h1 className="text-lg font-medium text-white font-serif">{user.displayName}</h1>
                         <p className="font-medium text-[#96959571] font-serif z-50">{user.email}</p>
+                        <p title={user.photoURL} className="cursor-pointer font-medium text-[#96959571] font-serif z-50">{user.photoURL.slice(0,35)}...</p>
                         <div className=" text-[40px] flex justify-center gap-5">
                             <FaGoogle className="hover:bg-slate-400/50 duration-[400ms] ease-in-out rounded-full"></FaGoogle>
                             <FaGithub className="hover:bg-slate-400/50 duration-[400ms] ease-in-out rounded-full"></FaGithub>

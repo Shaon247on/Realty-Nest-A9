@@ -19,7 +19,7 @@ const Register = () => {
     const [success, setSuccess] = useState('')
 
     const { registerAuth, profileUpdate, setUser } = useContext(AuthContext)
-    const [hidden, setHidden] = useState(true)
+    const [hidden, setHidden] = useState(false)
 
     const onSubmit = (data) => {
         const { name, email, photo, password } = data
