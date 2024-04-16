@@ -8,6 +8,7 @@ import Profile from "../Components/Pages/Profile/Profile";
 import BestOffers from "../Components/Sections/BestOffers";
 import Card from "../Components/Sections/Card";
 import PrivateRoute from "./PrivateRoute";
+import Blogs from "../Components/Pages/Blogs/Blogs";
 const router = createBrowserRouter([
     {
       path: "/",
@@ -41,6 +42,11 @@ const router = createBrowserRouter([
           element: <PrivateRoute><Card></Card></PrivateRoute>,
           loader: ()=> fetch('data.json')
         },
+        {
+          path: '/blogs',
+          element:<Blogs></Blogs>,
+          loader: ()=> fetch('data.json')
+        }
         
       ]
     },

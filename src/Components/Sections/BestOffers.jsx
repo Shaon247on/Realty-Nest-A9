@@ -15,7 +15,7 @@ const BestOffers = () => {
         <div className='mt-28'>
             <div className=' text-center'>
                 <h1 className='text-2xl md:text-4xl font-bold mb-5'>Best offers this week</h1>
-                <p className='w-[260px] text-[13px] md:text-base md:w-[600px] mx-auto text-[#231F20B3] mb-10'>Unlock your dream home with our exclusive offer this week! Enjoy unbeatable discounts on property prices, making homeownership more affordable than ever.</p>
+                <p className=' text-[13px] md:text-base w-[320px] md:w-[600px] mx-auto text-[#231F20B3] mb-10'>Unlock your dream home with our exclusive offer this week! Enjoy unbeatable discounts on property prices, making homeownership more affordable than ever.</p>
             </div>
             <div className='grid grid-cols-4 md:col-span-3 gap-2 h-[600px] mb-8 mx-4'>
                 {

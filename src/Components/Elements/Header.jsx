@@ -7,6 +7,7 @@ const Header = () => {
         <li> <NavLink to='/'>Home</NavLink> </li>
         <li> <NavLink to='/login'>Login</NavLink> </li>
         <li> <NavLink to='/register'>Register</NavLink> </li>
+        <li> <NavLink to='/blogs'>Blogs</NavLink> </li>
     </>
 
     const { logOut, user } = useContext(AuthContext)
@@ -33,19 +34,19 @@ const Header = () => {
                         {navLink}
                     </ul>
                 </div>
-                <Link to='/'><button className="btn btn-ghost text-lg md:text-2xl font-bold">Realty <span className="text-[#AD974F]">Nest</span></button></Link>
+                <Link to='/'><button className="btn btn-ghost text-lg md:text-2xl font-bold pl-0 md:pl-4">Realty <span className="text-[#AD974F]">Nest</span></button></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     {navLink}
                 </ul>
             </div>
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-2  md:gap-6">
                 <div>
                     {
                         user ? <>
                             <details className="dropdown dropdown-end">
-                                <summary ><img title={user?.displayName} src={user.photoURL} alt="" className="avatar object-cover w-[44px] h-[44px] rounded-full" /></summary>
+                                <summary ><img title={user?.displayName} src={user.photoURL} alt="" className="avatar object-cover w-[38px] md:w-[44px] h-[38px] md:h-[44px] rounded-full" /></summary>
                                 <div className="p-2 shadow menu text-black dropdown-content z-[1] bg-gradient-to-t from-[#8E793E] to-[#AD974F] opacity-100 rounded-box w-[250px] md:w-[500px]">
                                     {/* profile details */}
                                     <div className="p-4 sm:flex sm:space-x-6 dark:bg-gray-50 dark:text-gray-800 w-[210px] md:w-[400px]">
@@ -80,7 +81,7 @@ const Header = () => {
                 <div>
                     {
                         user ? <>
-                            <Link to='/login'><button onClick={handleSignOut} className="btn w-16 md:w-32 lg:w-36 bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#55482b] hover:to-[#a89a6c] text-white px-10">Sign Out</button></Link>
+                            <Link to='/login'><button onClick={handleSignOut} className="btn w-24 md:w-32 lg:w-36 bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#55482b] hover:to-[#a89a6c] text-white px-2 lg:px-10">Sign Out</button></Link>
 
                         </> :
                             <Link to='/login'><button className="btn bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#55482b]  hover:to-[#a89a6c]  text-white px-10">Login</button></Link>

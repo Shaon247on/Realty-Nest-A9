@@ -39,14 +39,14 @@ const AuthProvider = ({ children }) => {
     const photoUpdate = (photo) => {
         // setLoading(true)
         window.location.reload()
-        return updateProfile(auth.currentUser, {            
+        return updateProfile(auth.currentUser, {
             photoURL: photo
         })
     }
     const nameUpdate = (name) => {
         // setLoading(true)
         window.location.reload()
-        return updateProfile(auth.currentUser, {            
+        return updateProfile(auth.currentUser, {
             displayName: name
         })
     }
@@ -65,17 +65,17 @@ const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser => {
-            if(currentUser){
+            if (currentUser) {
                 setUser(currentUser)
-            setLoading(false)
-            }else{
+                setLoading(false)
+            } else {
                 setUser(null)
             }
         }))
         return () => {
             unSubscribe()
         }
-    },[user?.photoURL, user?.displayName])
+    }, [user?.photoURL, user?.displayName])
 
 
     const authInfo = {
