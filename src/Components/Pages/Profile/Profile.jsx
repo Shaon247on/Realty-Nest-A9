@@ -58,7 +58,7 @@ const Profile = () => {
         <div className="">
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>Realty Nest || Profile</title>
+                <title>Realty Nest || Update Profile</title>
                 <link rel="canonical" href="http://mysite.com/example" />
             </Helmet>
             <div className="bg-meteor h-[640px] flex justify-center pt-14 ">
