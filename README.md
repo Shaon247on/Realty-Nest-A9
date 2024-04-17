@@ -24,25 +24,15 @@ I'm aminul Islam Shaon, an student who is giving his full potentiality to learn 
 [![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/)
 
 
-## npm Packages:
+## npm Packages used for the Challenges part:
 
-🧠 react-router-dom
+🧠 React Hook form
 
 👩‍💻 animate.css
 
-🌞 tailwind.css
-
-👯‍♀️ prop-types
-
-🤔 react-icons
-
 🗺️ react-leaflet
 
-📅 moment
+🏃‍♂️ swiper.js
 
-😄 swiper.js
 
-⚡️ react-helmet
-
-⭐ react-awesome-stars-rating
 
