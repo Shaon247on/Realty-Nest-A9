@@ -3,7 +3,9 @@ import 'keen-slider/keen-slider.min.css'
 import { useKeenSlider } from "keen-slider/react"
 import moment from 'moment';
 import ReactStarsRating from 'react-awesome-stars-rating';
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
+import toast, { Toaster } from 'react-hot-toast';
+
 
 // Icons Inputs
 import { HiOutlineSquares2X2 } from "react-icons/hi2";
@@ -51,7 +53,10 @@ const Card = () => {
         iconSize: [38, 38]
     })
 
-
+    const handleRequestAShowing = () => {
+        const notify = () => toast.success('Request Sent');
+        notify()
+    }
 
     return (
         <div className="pt-[76px]">
@@ -60,7 +65,10 @@ const Card = () => {
                 <title>{detailedCard?.estate_title || 'Realty Nest'}</title>
                 <link rel="canonical" href="http://mysite.com/example" />
             </Helmet>
-            
+            <Toaster
+                position="top-right"
+                reverseOrder={true}
+            />
             {/* Slider section */}
             <div ref={sliderRef} className="keen-slider bg-meteor">
                 <div className="keen-slider__slide number-slide1 overflow-hidden h-[500px] lg:h-[600px] w-auto">
@@ -119,7 +127,7 @@ const Card = () => {
 
                     </div>
                     <div className="w-[250px]">
-                        <button className="btn bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-b hover:from-[#725f3a] hover:to-[#ac9b65] text-white text-xs">REQUEST A SHOWING</button>
+                        <button onClick={handleRequestAShowing} className="btn bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-b hover:from-[#725f3a] hover:to-[#ac9b65] text-white text-xs">REQUEST A SHOWING</button>
                     </div>
                 </div>
 
