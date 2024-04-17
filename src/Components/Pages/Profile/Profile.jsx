@@ -4,6 +4,8 @@ import { FaGoogle } from "react-icons/fa";
 import { FaGithub, FaSquareXTwitter } from "react-icons/fa6";
 import { FaPlusCircle } from "react-icons/fa";
 import { CiEdit } from "react-icons/ci";
+import { Helmet } from "react-helmet";
+
 
 const Profile = () => {
     const { user, loading, photoUpdate, setUser, nameUpdate } = useContext(AuthContext)
@@ -54,6 +56,11 @@ const Profile = () => {
     }
     return (
         <div className="">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Realty Nest || Profile</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
             <div className="bg-meteor h-[640px] flex justify-center pt-14 ">
                 <div className="flex flex-col items-center justify-center ">
                     <div className="w-[300px] h-[300px] border-[23px] relative border-[#AD974F33] rounded-full mb-[-140px] z-10">
@@ -137,35 +144,33 @@ const Profile = () => {
                 </div>
             </div>
             <div>
-                <div>
-                    <h1>User</h1>
+                <div className="text-center mt-11">
+                    <h1 className="text-4xl font-bold">User Details</h1>
                 </div>
-                <div>
+                <div className=" mt-7">
                     <form>
                         <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-50">
                             <div className="space-y-2 col-span-full lg:col-span-1">
-                                <p className="font-medium">Profile</p>
-                                <p className="text-xs">Adipisci fuga autem eum!</p>
+                                <p className="text-2xl font-bold ">Profile</p>
                             </div>
                             <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
-                                <div className="col-span-full sm:col-span-3">
-                                    <label htmlFor="username" className="text-sm">Username</label>
-                                    <input id="username" type="text" placeholder="Username" className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
-                                </div>
-                                <div className="col-span-full sm:col-span-3">
-                                    <label htmlFor="website" className="text-sm">Website</label>
-                                    <input id="website" type="text" placeholder="https://" className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
-                                </div>
                                 <div className="col-span-full">
-                                    <label htmlFor="bio" className="text-sm">Bio</label>
-                                    <textarea id="bio" placeholder="" className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"></textarea>
-                                </div>
-                                <div className="col-span-full">
-                                    <label htmlFor="bio" className="text-sm">Photo</label>
+                                    <label htmlFor="bio" className="text-sm font-semibold">Photo</label>
                                     <div className="flex items-center space-x-2">
-                                        <img src="https://source.unsplash.com/30x30/?random" alt="" className="w-10 h-10 dark:bg-gray-500 rounded-full dark:bg-gray-300" />
-                                        <button type="button" className="px-4 py-2 border rounded-md dark:border-gray-800">Change</button>
+                                        <img src={user.photoURL} alt="" className="w-10 h-10 dark:bg-gray-500 rounded-full" />
                                     </div>
+                                </div>
+                                <div className="col-span-full sm:col-span-3">
+                                    <label htmlFor="username" className="text-sm font-semibold">Username</label>
+                                    <input id="username" type="text" placeholder={user.displayName} className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
+                                </div>
+                                <div className="col-span-full sm:col-span-3">
+                                    <label htmlFor="website" className="text-sm font-semibold">Email</label>
+                                    <input id="website" type="text" placeholder={user.email} className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
+                                </div>
+                                <div className="col-span-full">
+                                    <label htmlFor="bio" className="text-sm font-semibold">Photo URL</label>
+                                    <textarea id="bio" placeholder={user.photoURL} className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"></textarea>
                                 </div>
                             </div>
                         </fieldset>

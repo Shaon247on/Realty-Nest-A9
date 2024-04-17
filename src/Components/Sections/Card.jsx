@@ -3,6 +3,7 @@ import 'keen-slider/keen-slider.min.css'
 import { useKeenSlider } from "keen-slider/react"
 import moment from 'moment';
 import ReactStarsRating from 'react-awesome-stars-rating';
+import {Helmet} from "react-helmet";
 
 // Icons Inputs
 import { HiOutlineSquares2X2 } from "react-icons/hi2";
@@ -22,7 +23,6 @@ import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 import { useEffect } from "react";
 import { Icon } from "leaflet";
 
-
 const Card = () => {
     const data = useLoaderData()
     const { id } = useParams()
@@ -36,23 +36,31 @@ const Card = () => {
         },
     })
     const detailedCard = data.find(prop => prop.id === id)
-    const { estate_title, img, side_img, sub_img, sub2_img, price, Area, bedroom, heating, simple_address, Status, last_update_date, rating, react, view, total_floor, bathroom, year_of_build, description, full_address, Zip_code, Country, Coordinate  } = detailedCard
+    const { estate_title, img, side_img, sub_img, sub2_img, price, Area, bedroom, heating, simple_address, Status, last_update_date, rating, react, view, total_floor, bathroom, year_of_build, description, full_address, Zip_code, Country, Coordinate } = detailedCard
 
     const onChange = (value) => {
         console.log(value);
     };
     useEffect(() => {
         window.scrollTo(0, 0);
-      }, [])
+    }, [])
 
 
-      const customIcom =new Icon({
-        iconUrl:'https://i.ibb.co/7RcBbhD/location-pin.png',
-        iconSize:[38,38]        
-      })
+    const customIcom = new Icon({
+        iconUrl: 'https://i.ibb.co/7RcBbhD/location-pin.png',
+        iconSize: [38, 38]
+    })
+
+
 
     return (
         <div className="pt-[76px]">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>{detailedCard?.estate_title || 'Realty Nest'}</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
+            
             {/* Slider section */}
             <div ref={sliderRef} className="keen-slider bg-meteor">
                 <div className="keen-slider__slide number-slide1 overflow-hidden h-[500px] lg:h-[600px] w-auto">
@@ -121,7 +129,7 @@ const Card = () => {
                         <div className="border-b py-7">
                             <div className="flex justify-between items-center">
                                 <h1 className="text-4xl font-semibold font-open">{simple_address}</h1>
-                                <p className=" bg-[#231F20b3] font-medium text-[18px] px-2 text-white">{Status}</p>
+                                <p className=" bg-[#231F20b3] font-medium text-[18px] px-2 text-white">For: {Status}</p>
                             </div>
                             <div className="mt-3 flex items-start md:items-center justify-between gap-4">
                                 <div className="flex flex-col md:flex-row gap-4 items-start lg:items-center">
@@ -205,7 +213,7 @@ const Card = () => {
                                 <h1 className="font-semibold">Location</h1>
                             </div>
                             <div className="grid grid-cols-2 md:grid-cols-4 border-b col-span-1 md:col-span-4 pb-6" >
-                                <div className="space-y-4 ">
+                                <div className="space-y-9 ">
                                     <div className="flex items-center gap-4">
                                         <FaLocationDot></FaLocationDot>
                                         <p className="text-gray-500/75 text-[14px]">Full Address:</p>
@@ -219,7 +227,7 @@ const Card = () => {
                                     <p className="text-[14px] font-semibold">{full_address}</p>
                                     <p className="text-[14px] font-semibold">{Zip_code}</p>
                                 </div>
-                                <div className="space-y-4 mt-5 md:mt-0">
+                                <div className="space-y-9 mt-5 md:mt-0">
                                     <div className="flex items-center gap-4">
                                         <SiBandsintown></SiBandsintown>
                                         <p className="text-gray-500/75 text-[14px]">Simple Address:</p>
@@ -229,7 +237,7 @@ const Card = () => {
                                         <p className="text-gray-500/75 text-[14px]">Country:</p>
                                     </div>
                                 </div>
-                                <div className="space-y-4 mt-5 md:mt-0">
+                                <div className="space-y-9 mt-5 md:mt-0">
                                     <p className="text-[14px] font-semibold">{simple_address}</p>
                                     <p className="text-[14px] font-semibold">{Country}</p>
                                 </div>
@@ -246,7 +254,7 @@ const Card = () => {
                                                 {simple_address} <br /> {full_address}
                                             </Popup>
                                         </Marker>
-                                    </MapContainer> 
+                                    </MapContainer>
                                 </div>
                             </div>
                         </div>

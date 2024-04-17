@@ -1,6 +1,7 @@
 import { Link, useLoaderData } from 'react-router-dom'
 import moment from 'moment';
 import { useState } from 'react';
+import {Helmet} from "react-helmet";
 
 const Blogs = () => {
 
@@ -13,6 +14,11 @@ const Blogs = () => {
 
     return (
         <section className="bg-base text-gray-100 pt-[74px]">
+             <Helmet>
+                <meta charSet="utf-8" />
+                <title>Realty Nest || Blogs</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
             <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
                 <Link rel="noopener noreferrer" href="#" className="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 bg-[#231F20e6]">
                     <img src={data[4].sub_img} alt="" className="object-cover w-full h-64 rounded sm:h-96 lg:col-span-7 bg-gray-500" />

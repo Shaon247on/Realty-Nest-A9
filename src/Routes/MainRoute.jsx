@@ -9,6 +9,7 @@ import BestOffers from "../Components/Sections/BestOffers";
 import Card from "../Components/Sections/Card";
 import PrivateRoute from "./PrivateRoute";
 import Blogs from "../Components/Pages/Blogs/Blogs";
+import ContactUs from "../Components/Pages/ContactUs/ContactUs";
 const router = createBrowserRouter([
     {
       path: "/",
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
         },
         {
           path: '/profile',
-          element: <Profile></Profile>
+          element:<PrivateRoute><Profile></Profile></PrivateRoute>
         },
         {
           path:'/best-offers',
@@ -44,8 +45,12 @@ const router = createBrowserRouter([
         },
         {
           path: '/blogs',
-          element:<Blogs></Blogs>,
+          element:<PrivateRoute><Blogs></Blogs></PrivateRoute>,
           loader: ()=> fetch('data.json')
+        },
+        {
+          path: '/contact-us',
+          element: <ContactUs></ContactUs>
         }
         
       ]

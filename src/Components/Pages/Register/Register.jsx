@@ -5,6 +5,8 @@ import { useForm } from "react-hook-form"
 import toast, { Toaster } from 'react-hot-toast';
 import 'animate.css';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import {Helmet} from "react-helmet";
+
 
 
 
@@ -52,6 +54,11 @@ const Register = () => {
     }
     return (
         <div className="bg-animated p-0 md:p-20 lg:p-20 pt-4 md:pt-[18px]">
+             <Helmet>
+                <meta charSet="utf-8" />
+                <title>Realty Nest || Register</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
             <Toaster
                 position="top-right"
                 reverseOrder={true}
@@ -133,7 +140,7 @@ const Register = () => {
                         </div>
                     </form>
                     <div>
-                        <button onClick={() => setHidden(!hidden)} className="absolute bottom-[170px] right-[50px] hover:bg-slate-400/75 duration-[400ms] ease-in-out text-[18px] p-[10px] rounded-full">{hidden ? <FaRegEyeSlash ></FaRegEyeSlash> : <FaRegEye></FaRegEye>}</button>
+                        <button onClick={() => setHidden(!hidden)} className="absolute bottom-[130px] lg:bottom-[170px] right-[15px] lg:right-[50px] hover:bg-slate-400/75 duration-[400ms] ease-in-out text-[18px] p-[10px] rounded-full">{hidden ? <FaRegEyeSlash ></FaRegEyeSlash> : <FaRegEye></FaRegEye>}</button>
                     </div>
                 </div>
                 <div className="w-[86%] lg:w-[2px] h-[2px] lg:h-full bg-[#26262633] mb-7 lg:mb-0">

@@ -6,6 +6,8 @@ import SocialLogin from "../../Elements/SocialLogin";
 import toast, { Toaster } from 'react-hot-toast';
 import 'animate.css';
 import { FaRegEye,FaRegEyeSlash } from "react-icons/fa";
+import {Helmet} from "react-helmet";
+
 
 const Login = () => {
 
@@ -44,6 +46,11 @@ const Login = () => {
 
     return (
         <div className="bg-animated p-0 md:p-20 lg:p-20 pt-[18px]">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Realty Nest || Login</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
             <Toaster
                 position="top-right"
                 reverseOrder={true}
@@ -91,7 +98,7 @@ const Login = () => {
                         </div>
                     </form>
                     <div>
-                        <button onClick={()=>setHidden(!hidden)} className="absolute top-[145px] right-[50px] hover:bg-slate-400/75 duration-[400ms] ease-in-out text-[18px] p-[10px] rounded-full">{hidden ? <FaRegEyeSlash ></FaRegEyeSlash>:<FaRegEye></FaRegEye>}</button>
+                        <button onClick={()=>setHidden(!hidden)} className="absolute top-[125px] lg:top-[145px] right-[15px] lg:right-[50px] hover:bg-slate-400/75 duration-[400ms] ease-in-out text-[18px] p-[10px] rounded-full">{hidden ? <FaRegEyeSlash ></FaRegEyeSlash>:<FaRegEye></FaRegEye>}</button>
                     </div>
                     <div className="mt-4 md:mt-6 lg:mt-0">
                         <div className="flex gap-1 items-center justify-center">

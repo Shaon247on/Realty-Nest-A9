@@ -1,7 +1,6 @@
 import { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
-import { FcGoogle } from "react-icons/fc";
-import { FaGithub, FaSquareXTwitter } from "react-icons/fa6";
+import { FaGithub, FaSquareXTwitter, FaGoogle } from "react-icons/fa6";
 import { useLocation, useNavigate } from "react-router-dom";
 
 
@@ -42,7 +41,7 @@ const SocialLogin = () => {
     }
     return (
         <div className='flex gap-10 justify-center items-center'>
-            <button onClick={handleGoogleLogin} className='hover:bg-blue-400/40 duration-[400ms] ease-in-out rounded-full'><FcGoogle className='text-[50px]'></FcGoogle></button>
+            <button onClick={handleGoogleLogin} className='hover:bg-blue-400/40 duration-[400ms] ease-in-out rounded-full'><FaGoogle className='text-[50px]'></FaGoogle></button>
             <button onClick={handleGithubLogin} className='hover:bg-blue-400/40 duration-[400ms] ease-in-out rounded-full'><FaGithub className='text-[50px]'></FaGithub></button>
             <button onClick={handleTwitterLogin} className='hover:bg-blue-400/40 duration-[400ms] ease-in-out rounded-lg'><FaSquareXTwitter className='text-[50px]'></FaSquareXTwitter></button>
 

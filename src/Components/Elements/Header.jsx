@@ -1,13 +1,15 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import 'animate.css';
 
 const Header = () => {
     const navLink = <>
         <li> <NavLink to='/'>Home</NavLink> </li>
-        <li> <NavLink to='/login'>Login</NavLink> </li>
-        <li> <NavLink to='/register'>Register</NavLink> </li>
         <li> <NavLink to='/blogs'>Blogs</NavLink> </li>
+        <li> <NavLink to='/contact-us'>Contact Us</NavLink> </li>
+        <li> <NavLink to='/register'>Register</NavLink> </li>
+        <li> <NavLink to='/profile'>Update Profile</NavLink> </li>
     </>
 
     const { logOut, user } = useContext(AuthContext)
@@ -41,10 +43,10 @@ const Header = () => {
                     {navLink}
                 </ul>
             </div>
-            <div className="flex items-center gap-2  md:gap-6">
+            <div className="flex items-center gap-2  md:gap-6 animate__animated animate__backInRight animate__slow-[100ms]">
                 {
                     user ? <>
-                        <div>
+                        <div className="animate__animated animate__backInRight animate__slow-[200ms]">
                             {
 
                                 user ?
@@ -52,7 +54,11 @@ const Header = () => {
 
                                     <>
                                         <details className="dropdown dropdown-end">
-                                            <summary ><img title={user?.displayName} src={user.photoURL} alt="" className="avatar object-cover w-[38px] md:w-[44px] h-[38px] md:h-[44px] rounded-full" /></summary>
+                                            <summary >
+                                                <div className="tooltip tooltip-bottom"  data-tip={user?.displayName}>
+                                                    <img src={user.photoURL} alt="" className="avatar object-cover w-[38px] md:w-[44px] h-[38px] md:h-[44px] rounded-full" />
+                                                </div>
+                                            </summary>
                                             <div className="p-2 shadow menu text-black dropdown-content z-[1] bg-gradient-to-t from-[#8E793E] to-[#AD974F] opacity-100 rounded-box w-[250px] md:w-[500px]">
                                                 {/* profile details */}
                                                 <div className="p-4 sm:flex sm:space-x-6 dark:bg-gray-50 dark:text-gray-800 w-[210px] md:w-[400px]">
@@ -84,19 +90,19 @@ const Header = () => {
                                     <><samp></samp></>
                             }
                         </div>
-                        <div>
+                        <div className="animate__animated animate__fadeIn animate__slow-[300ms]">
                             {
                                 user ? <>
                                     <Link to='/login'><button onClick={handleSignOut} className="btn w-24 md:w-32 lg:w-36 bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#55482b] hover:to-[#a89a6c] text-white px-2 lg:px-10">Sign Out</button></Link>
 
                                 </> :
-                                <div className="flex items-center justify-center w-[228px] h-[48px]"> <span className="loading loading-infinity w-[50px]"></span></div>
-                                    
+                                    <span></span>
+
                             }
                         </div>
-                    </>:
-                    <Link to='/login'><button className="btn bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#55482b]  hover:to-[#a89a6c]  text-white px-10">Login</button></Link>
-                    
+                    </> :
+                        <Link to='/login'><button className="btn bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#55482b]  hover:to-[#a89a6c]  text-white px-10">Login</button></Link>
+
                 }
             </div>
         </div>
