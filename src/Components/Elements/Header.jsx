@@ -90,11 +90,13 @@ const Header = () => {
                                     <Link to='/login'><button onClick={handleSignOut} className="btn w-24 md:w-32 lg:w-36 bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#55482b] hover:to-[#a89a6c] text-white px-2 lg:px-10">Sign Out</button></Link>
 
                                 </> :
-                                    <Link to='/login'><button className="btn bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#55482b]  hover:to-[#a89a6c]  text-white px-10">Login</button></Link>
+                                <div className="flex items-center justify-center w-[228px] h-[48px]"> <span className="loading loading-infinity w-[50px]"></span></div>
+                                    
                             }
                         </div>
                     </>:
-                    <div className="flex items-center justify-center w-[228px] h-[48px]"> <span className="loading loading-infinity w-[50px]"></span></div>
+                    <Link to='/login'><button className="btn bg-gradient-to-t from-[#8E793E] to-[#AD974F] border-0 hover:bg-gradient-to-t hover:from-[#55482b]  hover:to-[#a89a6c]  text-white px-10">Login</button></Link>
+                    
                 }
             </div>
         </div>

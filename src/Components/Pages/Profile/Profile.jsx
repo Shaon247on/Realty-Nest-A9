@@ -15,36 +15,36 @@ const Profile = () => {
         setError('')
         const patternPhotoURL = /\.(jpeg|jpg|gif|png|bmp)$/i
         const photo = e.target.photo.value
-        if(!patternPhotoURL.test(photo)){
-            return setError ('Kindly Provide a Valid photo URL')
+        if (!patternPhotoURL.test(photo)) {
+            return setError('Kindly Provide a Valid photo URL')
         }
-         photoUpdate(photo)
-        .then(result=>{
-            console.log(result.user)
-            setUser(result.user) 
-            window.location.reload()           
-        })
-        .catch(error=>{
-            console.error(error);
-        })
+        photoUpdate(photo)
+            .then(result => {
+                console.log(result.user)
+                setUser(result.user)
+                window.location.reload()
+            })
+            .catch(error => {
+                console.error(error);
+            })
     }
     const handleNameUpload = (e) => {
         e.preventDefault()
         const name = e.target.name.value
         console.log(name)
-        if(name.length > 17){
-           return setError("Name should be under 17 character")
+        if (name.length > 17) {
+            return setError("Name should be under 17 character")
         }
 
         nameUpdate(name)
-        .then(result=>{
-            console.log(result.user)
-            setUser(result.user)
-            window.location.reload()
-        })
-        .catch(error=>{
-            console.error(error);
-        })
+            .then(result => {
+                console.log(result.user)
+                setUser(result.user)
+                window.location.reload()
+            })
+            .catch(error => {
+                console.error(error);
+            })
     }
 
     if (loading) {
@@ -95,7 +95,7 @@ const Profile = () => {
 
 
                     <div className="bg-[#1d1d1d] h-[350px] w-[310px] rounded-lg z-0 pt-40 text-center space-y-4 relative">
-                    <div className="absolute text-[25px] right-[35px] bottom-[139px] lg:bottom-[139px] z-50">
+                        <div className="absolute text-[25px] right-[35px] bottom-[139px] lg:bottom-[139px] z-50">
                             <button title="Change Name" className="hover:bg-slate-400/50 duration-[400ms] ease-in-out rounded-full p-1" onClick={() => document.getElementById('my_modal_2').showModal()}> <CiEdit className="text-[#3F372A] font-bold"></CiEdit> </button>
                             <dialog id="my_modal_2" className="modal">
                                 <div className="modal-box bg-wave">
@@ -127,13 +127,49 @@ const Profile = () => {
                         </div>
                         <h1 className="text-lg font-medium text-white font-serif">{user.displayName}</h1>
                         <p className="font-medium text-[#96959571] font-serif z-50">{user.email}</p>
-                        <p title={user.photoURL} className="cursor-pointer font-medium text-[#96959571] font-serif z-50">{user.photoURL.slice(0,35)}...</p>
+                        <p title={user.photoURL} className="cursor-pointer font-medium text-[#96959571] font-serif z-50">{user.photoURL.slice(0, 35)}...</p>
                         <div className=" text-[40px] flex justify-center gap-5">
                             <FaGoogle className="hover:bg-slate-400/50 duration-[400ms] ease-in-out rounded-full"></FaGoogle>
                             <FaGithub className="hover:bg-slate-400/50 duration-[400ms] ease-in-out rounded-full"></FaGithub>
                             <FaSquareXTwitter className="hover:bg-slate-400/50 duration-[400ms] ease-in-out rounded-[6px]"></FaSquareXTwitter>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <h1>User</h1>
+                </div>
+                <div>
+                    <form>
+                        <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-50">
+                            <div className="space-y-2 col-span-full lg:col-span-1">
+                                <p className="font-medium">Profile</p>
+                                <p className="text-xs">Adipisci fuga autem eum!</p>
+                            </div>
+                            <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
+                                <div className="col-span-full sm:col-span-3">
+                                    <label htmlFor="username" className="text-sm">Username</label>
+                                    <input id="username" type="text" placeholder="Username" className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
+                                </div>
+                                <div className="col-span-full sm:col-span-3">
+                                    <label htmlFor="website" className="text-sm">Website</label>
+                                    <input id="website" type="text" placeholder="https://" className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
+                                </div>
+                                <div className="col-span-full">
+                                    <label htmlFor="bio" className="text-sm">Bio</label>
+                                    <textarea id="bio" placeholder="" className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"></textarea>
+                                </div>
+                                <div className="col-span-full">
+                                    <label htmlFor="bio" className="text-sm">Photo</label>
+                                    <div className="flex items-center space-x-2">
+                                        <img src="https://source.unsplash.com/30x30/?random" alt="" className="w-10 h-10 dark:bg-gray-500 rounded-full dark:bg-gray-300" />
+                                        <button type="button" className="px-4 py-2 border rounded-md dark:border-gray-800">Change</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
                 </div>
             </div>
         </div>
